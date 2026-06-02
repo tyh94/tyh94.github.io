@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tatiana — iOS Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0D0D0F;
+      --surface: #141416;
+      --border: rgba(255,255,255,0.07);
+      --accent: #A8FF78;
+      --accent2: #78FFD6;
+      --text: #F0F0F0;
+      --muted: #6B6B7A;
+      --card: #18181C;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+    /* ── NOISE ── */
+    body::after {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(13,13,15,0.8); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.1rem;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .lang-toggle button {
+      background: none; border: none; padding: 0.3rem 0.7rem; cursor: pointer;
+      color: var(--muted); font-family: "Inter", sans-serif; font-size: 0.73rem;
+      font-weight: 500; letter-spacing: 0.05em; transition: all 0.15s;
+    }
+    .lang-toggle button.active { background: var(--accent); color: #000; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+    section { padding: 7rem 0; }
+    .divider { width: 100%; max-width: 1100px; margin: 0 auto; height: 1px; background: var(--border); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      max-width: 1100px; margin: 0 auto; padding: 0 3rem;
+      padding-top: 6rem; width: 100%;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+    .hero-eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--accent); display: block; }
+    .hero-name {
+      font-family: "Syne", sans-serif; font-size: clamp(3.2rem, 6vw, 5.5rem);
+      font-weight: 800; line-height: 1.0; color: var(--text);
+      margin-bottom: 0.5rem; letter-spacing: -0.02em;
+      opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+    .hero-role {
+      font-family: "Syne", sans-serif; font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 600; color: var(--muted); margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+    .hero-desc {
+      font-size: 0.95rem; font-weight: 300; color: var(--muted);
+      line-height: 1.8; max-width: 420px; margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: #000; text-decoration: none;
+      padding: 0.8rem 1.8rem; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--border); color: var(--text); text-decoration: none;
+      padding: 0.8rem 1.8rem; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* Hero right: stats */
+    .hero-right {
+      opacity: 0; animation: fadeIn 1s ease 0.8s forwards;
+    }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .stat-box { background: var(--card); padding: 2rem 1.5rem; }
+    .stat-num {
+      font-family: "Syne", sans-serif; font-size: 2.8rem; font-weight: 800;
+      color: var(--accent); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .stat-label { font-size: 0.78rem; font-weight: 400; color: var(--muted); line-height: 1.4; }
+
+    /* ── ABOUT ── */
+    #about .container { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: start; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .section-title { font-family: "Syne", sans-serif; font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .about-body p { font-size: 0.93rem; font-weight: 300; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+    .skill-chip {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+      padding: 0.3rem 0.85rem; border-radius: 4px;
+      border: 1px solid var(--border); color: var(--muted);
+      transition: all 0.18s; cursor: default;
+    }
+    .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── EXPERIENCE ── */
+    #experience .container {}
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 0 3.5rem; padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .exp-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-item.visible { opacity: 1; transform: translateY(0); }
+
+    .exp-meta {}
+    .exp-period { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    .exp-duration { font-size: 0.72rem; color: var(--muted); opacity: 0.6; }
+
+    .exp-body {}
+    .exp-role { font-family: "Syne", sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .exp-company { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .exp-bullets { list-style: none; margin-bottom: 1rem; }
+    .exp-bullets li {
+      font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.7;
+      padding-left: 1.2rem; position: relative; margin-bottom: 0.3rem;
+    }
+    .exp-bullets li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.15rem; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .exp-tag { font-size: 0.68rem; font-weight: 500; padding: 0.18rem 0.6rem; border-radius: 3px; background: rgba(168,255,120,0.08); color: var(--accent); border: 1px solid rgba(168,255,120,0.2); }
+
+    /* ── APPS ── */
+    #apps .container {}
+    .apps-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .app-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 2rem 2.5rem; display: grid; grid-template-columns: 88px 1fr auto;
+      gap: 2rem; align-items: center;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .app-card:hover { border-color: rgba(168,255,120,0.25); transform: translateY(-3px); }
+    .app-icon-box {
+      width: 88px; height: 88px; border-radius: 20px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 2.4rem;
+    }
+    .app-icon-box.bread  { background: linear-gradient(145deg, #3D1A0A, #7A3010); }
+    .app-icon-box.blue   { background: linear-gradient(145deg, #0A1A3D, #103070); }
+    .app-icon-box.violet { background: linear-gradient(145deg, #1A0A3D, #401070); }
+
+    .app-info h3 { font-family: "Syne", sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .app-cat { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .app-info p { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.65; max-width: 500px; }
+    .app-badge-wrap { flex-shrink: 0; }
+    .badge-soon { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(168,255,120,0.35); padding: 0.45rem 1rem; border-radius: 4px; }
+    .badge-store { display: block; background: var(--text); color: #000; text-decoration: none; padding: 0.65rem 1.25rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; transition: opacity 0.2s; white-space: nowrap; }
+    .badge-store:hover { opacity: 0.8; }
+
+    /* ── CONTACT ── */
+    #contact .container { text-align: center; max-width: 600px; }
+    .contact-title { font-family: "Syne", sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--text); margin-bottom: 1rem; line-height: 1.1; }
+    .contact-title span { color: var(--accent); }
+    .contact-sub { font-size: 0.93rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; }
+    .contact-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .clink {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      text-decoration: none; padding: 0.7rem 1.5rem; border-radius: 6px;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; transition: all 0.18s;
+    }
+    .clink.primary { background: var(--accent); color: #000; font-weight: 600; }
+    .clink.primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .clink.outline { border: 1px solid var(--border); color: var(--muted); }
+    .clink.outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; max-width: 100%; }
+    footer p { font-size: 0.75rem; color: var(--muted); }
+    footer nav a { font-size: 0.75rem; color: var(--muted); text-decoration: none; margin-left: 1.5rem; transition: color 0.18s; }
+    footer nav a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding: 0 1.5rem; padding-top: 7rem; }
+      .hero-right { display: none; }
+      .container { padding: 0 1.5rem; }
+      section { padding: 5rem 0; }
+      #about .container { grid-template-columns: 1fr; gap: 2rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .app-card { grid-template-columns: 72px 1fr; padding: 1.5rem; }
+      .app-badge-wrap { grid-column: 1 / -1; }
+      .app-icon-box { width: 72px; height: 72px; border-radius: 16px; font-size: 1.9rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+      footer nav { margin-top: 0; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">T<span>.</span>mkv</span>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about"      data-ru="Обо мне"    data-en="About">Обо мне</a></li>
+        <li><a href="#experience" data-ru="Опыт"       data-en="Experience">Опыт</a></li>
+        <li><a href="#apps"       data-ru="Приложения" data-en="Apps">Приложения</a></li>
+        <li><a href="#contact"    data-ru="Контакт"    data-en="Contact">Контакт</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <p class="hero-eyebrow" data-ru="Senior iOS Developer" data-en="Senior iOS Developer">Senior iOS Developer</p>
+        <h1 class="hero-name">Tatiana<br>Makeeva</h1>
+        <p class="hero-role" data-ru="8+ лет в iOS разработке" data-en="8+ years in iOS development">8+ лет в iOS разработке</p>
+        <p class="hero-desc"
+           data-ru="Разрабатываю нативные iOS-приложения с 2016 года. Работала в Movavi, Новотелеком, Improve Digital и Сбере. Сейчас строю собственные продукты."
+           data-en="Building native iOS apps since 2016. Worked at Movavi, Novotelecom, Improve Digital and Sber. Currently building my own products.">
+          Разрабатываю нативные iOS-приложения с 2016 года. Работала в Movavi, Новотелеком, Improve Digital и Сбере. Сейчас строю собственные продукты.
+        </p>
+        <div class="hero-actions">
+          <a href="#apps" class="btn-primary">
+            <span data-ru="Мои приложения" data-en="My apps">Мои приложения</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost" data-ru="Написать" data-en="Contact me">Написать</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-num">8+</div>
+            <div class="stat-label" data-ru="лет в iOS разработке" data-en="years in iOS dev">лет в iOS разработке</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4</div>
+            <div class="stat-label" data-ru="компании от стартапа до Сбера" data-en="companies from startup to Sber">компании: от стартапа до Сбера</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">TL</div>
+            <div class="stat-label" data-ru="опыт тимлида iOS-команды" data-en="team lead experience">опыт тимлида iOS-команды</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">🍞</div>
+            <div class="stat-label" data-ru="первое своё приложение — SourdoughCooker" data-en="first own app — SourdoughCooker">первое своё приложение — SourdoughCooker</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label" data-ru="Обо мне" data-en="About">Обо мне</p>
+        <h2 class="section-title" data-ru="iOS-инженер<br>из Новосибирска" data-en="iOS Engineer<br>from Novosibirsk">iOS-инженер<br>из Новосибирска</h2>
+      </div>
+      <div class="about-body reveal">
+        <p data-ru="Начала карьеру в 2016-м в Movavi — делала мобильный видеоредактор на Objective-C. Постепенно переходила от рядового разработчика к тимлиду: в Improve Digital руководила ревью четырёх iOS-разработчиков."
+           data-en="Started my career in 2016 at Movavi building a mobile video editor in Objective-C. Grew from individual contributor to team lead: at Improve Digital I ran code reviews for a team of four iOS developers.">
+          Начала карьеру в 2016-м в Movavi — делала мобильный видеоредактор на Objective-C. Постепенно переходила от рядового разработчика к тимлиду: в Improve Digital руководила ревью четырёх iOS-разработчиков.
+        </p>
+        <p data-ru="С 2020 года в Сбере, в команде SberDevices — разрабатываю голосовой помощник. Пишу unit- и snapshot-тесты, профилирую retain-циклы, настраиваю AVAudioSession."
+           data-en="Since 2020 at Sber, on the SberDevices team — working on the voice assistant. I write unit and snapshot tests, profile retain cycles, and configure AVAudioSession.">
+          С 2020 года в Сбере, в команде SberDevices — разрабатываю голосовой помощник. Пишу unit- и snapshot-тесты, профилирую retain-циклы, настраиваю AVAudioSession.
+        </p>
+        <p data-ru="Параллельно делаю собственные приложения — первое уже в App Store скоро."
+           data-en="In parallel, I build my own apps — the first one is coming to the App Store soon.">
+          Параллельно делаю собственные приложения — первое уже в App Store скоро.
+        </p>
+        <div class="skills-wrap">
+          <span class="skill-chip">Swift</span>
+          <span class="skill-chip">SwiftUI</span>
+          <span class="skill-chip">UIKit</span>
+          <span class="skill-chip">Objective-C</span>
+          <span class="skill-chip">WidgetKit</span>
+          <span class="skill-chip">Live Activities</span>
+          <span class="skill-chip">AVAudioSession</span>
+          <span class="skill-chip">Core Data</span>
+          <span class="skill-chip">Realm</span>
+          <span class="skill-chip">Unit Testing</span>
+          <span class="skill-chip">Snapshot Tests</span>
+          <span class="skill-chip">Swinject</span>
+          <span class="skill-chip">Websockets</span>
+          <span class="skill-chip">App Store Connect</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="exp-header reveal">
+        <div>
+          <p class="section-label" data-ru="Карьера" data-en="Career">Карьера</p>
+          <h2 class="section-title" data-ru="Опыт работы" data-en="Experience">Опыт работы</h2>
+        </div>
+      </div>
+      <div class="exp-list">
+
+        <!-- Sber -->
+        <div class="exp-item">
+          <div class="exp-meta">
+            <p class="exp-period" data-ru="Июль 2020 — наст. вр." data-en="July 2020 — Present">Июль 2020 — наст. вр.</p>
+            <p class="exp-duration" data-ru="~6 лет" data-en="~6 years">~6 лет</p>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-ru="iOS Developer" data-en="iOS Developer">iOS Developer</h3>
+            <p class="exp-company">Сбербанк · SberDevices, Москва</p>
+            <ul class="exp-bullets">
+              <li data-ru="Разработка голосового помощника в команде 8–10 iOS-разработчиков" data-en="Building a voice assistant in a team of 8–10 iOS developers">Разработка голосового помощника в команде 8–10 iOS-разработчиков</li>
+              <li data-ru="Настройка и поддержка AVAudioSession" data-en="Configuring and maintaining AVAudioSession">Настройка и поддержка AVAudioSession</li>
+              <li data-ru="Профилирование retain-циклов, устранение утечек памяти" data-en="Profiling retain cycles and fixing memory leaks">Профилирование retain-циклов, устранение утечек памяти</li>
+              <li data-ru="Написание unit-тестов и UI snapshot-тестов на весь функционал" data-en="Writing unit tests and UI snapshot tests for all features">Написание unit-тестов и UI snapshot-тестов на весь функционал</li>
+              <li data-ru="Разработка новых фич" data-en="Developing new features">Разработка новых фич</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">Swift</span>
+              <span class="exp-tag">AVAudioSession</span>
+              <span class="exp-tag">Unit Tests</span>
+              <span class="exp-tag">Snapshot Tests</span>
+              <span class="exp-tag">SwiftUI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Improve Digital -->
+        <div class="exp-item">
+          <div class="exp-meta">
+            <p class="exp-period" data-ru="Окт 2019 — Июль 2020" data-en="Oct 2019 — July 2020">Окт 2019 — Июль 2020</p>
+            <p class="exp-duration" data-ru="10 месяцев" data-en="10 months">10 месяцев</p>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-ru="TeamLead iOS" data-en="iOS Team Lead">TeamLead iOS</h3>
+            <p class="exp-company">Improve Digital, Новосибирск</p>
+            <ul class="exp-bullets">
+              <li data-ru="Руководство командой из 4 iOS-разработчиков: проработка плана развития, код-ревью" data-en="Leading a team of 4 iOS developers: roadmap planning and code review">Руководство командой из 4 iOS-разработчиков: проработка плана развития, код-ревью</li>
+              <li data-ru="Разработка приложения для управления умными замками" data-en="Building a smart lock control application">Разработка приложения для управления умными замками</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">Swift</span>
+              <span class="exp-tag">Realm</span>
+              <span class="exp-tag">Swinject</span>
+              <span class="exp-tag">Team Lead</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Новотелеком -->
+        <div class="exp-item">
+          <div class="exp-meta">
+            <p class="exp-period" data-ru="Сент 2018 — Окт 2019" data-en="Sept 2018 — Oct 2019">Сент 2018 — Окт 2019</p>
+            <p class="exp-duration" data-ru="1 год 2 мес." data-en="1 yr 2 mo.">1 год 2 мес.</p>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-ru="iOS Developer" data-en="iOS Developer">iOS Developer</h3>
+            <p class="exp-company">Новотелеком, Новосибирск</p>
+            <ul class="exp-bullets">
+              <li data-ru="Перевод проекта с Objective-C на Swift" data-en="Migrating the project from Objective-C to Swift">Перевод проекта с Objective-C на Swift</li>
+              <li data-ru="Архитектура MVC+Coordinator, Websockets" data-en="MVC+Coordinator architecture, Websockets">Архитектура MVC+Coordinator, Websockets</li>
+              <li data-ru="Участие в двух фичевых командах (iOS + Android + Backend + QA)" data-en="Working across two feature teams (iOS + Android + Backend + QA)">Участие в двух фичевых командах (iOS + Android + Backend + QA)</li>
+              <li data-ru="Внедрение процесса code review для iOS-команды" data-en="Introducing code review process for the iOS team">Внедрение процесса code review для iOS-команды</li>
+              <li data-ru="Публикация в TestFlight и App Store" data-en="Publishing to TestFlight and App Store">Публикация в TestFlight и App Store</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">Swift</span>
+              <span class="exp-tag">Objective-C</span>
+              <span class="exp-tag">Websockets</span>
+              <span class="exp-tag">MVC+Coordinator</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movavi -->
+        <div class="exp-item">
+          <div class="exp-meta">
+            <p class="exp-period" data-ru="Авг 2016 — Сент 2018" data-en="Aug 2016 — Sept 2018">Авг 2016 — Сент 2018</p>
+            <p class="exp-duration" data-ru="2 года 2 мес." data-en="2 yrs 2 mo.">2 года 2 мес.</p>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-ru="iOS Developer" data-en="iOS Developer">iOS Developer</h3>
+            <p class="exp-company">Movavi, Новосибирск</p>
+            <ul class="exp-bullets">
+              <li data-ru="Разработка мобильного видеоредактора" data-en="Developing a mobile video editor">Разработка мобильного видеоредактора</li>
+              <li data-ru="Проект на Objective-C, архитектура MVP" data-en="Objective-C project, MVP architecture">Проект на Objective-C, архитектура MVP</li>
+              <li data-ru="Внедрение Typhoon DI" data-en="Implementing Typhoon DI">Внедрение Typhoon DI</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="exp-tag">Objective-C</span>
+              <span class="exp-tag">MVP</span>
+              <span class="exp-tag">Typhoon DI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <p class="section-label" data-ru="Продукты" data-en="Products">Продукты</p>
+        <h2 class="section-title" data-ru="Мои приложения" data-en="My apps">Мои приложения</h2>
+      </div>
+      <div class="apps-grid">
+
+        <!-- SourdoughCooker -->
+        <div class="app-card reveal">
+          <div class="app-icon-box bread">🍞</div>
+          <div class="app-info">
+            <p class="app-cat" data-ru="Кулинария · iOS" data-en="Food & Baking · iOS">Кулинария · iOS</p>
+            <h3>SourdoughCooker</h3>
+            <p data-ru="Умный помощник для выпечки на закваске. Live Activity и Dynamic Island таймеры, пошаговые рецепты, уведомления."
+               data-en="Smart sourdough baking companion. Live Activity and Dynamic Island timers, step-by-step recipes, notifications.">
+              Умный помощник для выпечки на закваске. Live Activity и Dynamic Island таймеры, пошаговые рецепты, уведомления.
+            </p>
+          </div>
+          <div class="app-badge-wrap">
+            <!-- <a href="https://apps.apple.com/app/idXXXXXXXX" class="badge-store" target="_blank">App Store</a> -->
+            <span class="badge-soon" data-ru="Скоро" data-en="Coming Soon">Скоро</span>
+          </div>
+        </div>
+
+        <!-- APP 2: раскомментируй когда будет готово
+        <div class="app-card reveal">
+          <div class="app-icon-box blue">🔵</div>
+          <div class="app-info">
+            <p class="app-cat" data-ru="Категория · iOS" data-en="Category · iOS">Категория · iOS</p>
+            <h3>Название</h3>
+            <p data-ru="Описание RU" data-en="Description EN">Описание RU</p>
+          </div>
+          <div class="app-badge-wrap">
+            <span class="badge-soon" data-ru="Скоро" data-en="Coming Soon">Скоро</span>
+          </div>
+        </div>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container reveal">
+      <p class="section-label" data-ru="Контакт" data-en="Contact">Контакт</p>
+      <h2 class="contact-title" data-ru="Давайте<br><span>поговорим</span>" data-en="Let's<br><span>talk</span>">Давайте<br><span>поговорим</span></h2>
+      <p class="contact-sub"
+         data-ru="Открыта к вопросам, коллаборациям и разговорам о Swift, архитектуре или хлебе на закваске."
+         data-en="Open to questions, collaborations, and conversations about Swift, architecture, or sourdough.">
+        Открыта к вопросам, коллаборациям и разговорам о Swift, архитектуре или хлебе на закваске.
+      </p>
+      <div class="contact-row">
+        <a href="mailto:tyh94@mail.ru" class="clink primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          tyh94@mail.ru
+        </a>
+        <a href="https://t.me/TyMkv" class="clink outline" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.61c-.152.678-.554.843-1.122.524l-3.1-2.285-1.495 1.438c-.165.165-.304.304-.624.304l.223-3.16 5.75-5.193c.25-.223-.054-.347-.387-.124L6.976 14.37l-3.06-.956c-.665-.208-.678-.665.14-.984l11.948-4.605c.554-.2 1.039.135.558 1.423z"/></svg>
+          Telegram
+        </a>
+        <a href="https://instagram.com/ttn_mkv" class="clink outline" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Instagram
+        </a>
+        <a href="https://github.com/tyh94" class="clink outline" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p data-ru="© 2026 Татьяна Макеева" data-en="© 2026 Tatiana Makeeva">© 2026 Татьяна Макеева</p>
+    <nav>
+      <a href="privacy.html" data-ru="Конфиденциальность" data-en="Privacy Policy">Конфиденциальность</a>
+      <a href="support.html" data-ru="Поддержка" data-en="Support">Поддержка</a>
+    </nav>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-ru]").forEach(el => {
+        el.innerHTML = el.getAttribute("data-" + lang);
+      });
+      document.getElementById("btn-ru").classList.toggle("active", lang === "ru");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      localStorage.setItem("lang", lang);
+    }
+    const saved = localStorage.getItem("lang") || "ru";
+    if (saved === "en") setLang("en");
+
+    // scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".reveal, .exp-item").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
