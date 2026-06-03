@@ -4,53 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — SourdoughCooker</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --cream: #F7F3EE; --warm-brown: #5C3D2E; --rust: #C1440E;
-      --muted: #9E8E7E; --dark: #1A1208; --light-line: rgba(92,61,46,0.12);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); }
-
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 3rem; border-bottom: 1px solid var(--light-line);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif; font-size: 1.1rem;
-      color: var(--warm-brown); text-decoration: none;
-    }
-    .lang-toggle { display: flex; border: 1px solid var(--light-line); border-radius: 100px; overflow: hidden; }
-    .lang-toggle button {
-      background: none; border: none; padding: 0.35rem 0.75rem; cursor: pointer;
-      color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
-    }
-    .lang-toggle button.active { background: var(--warm-brown); color: var(--cream); }
-
-    main { max-width: 720px; margin: 4rem auto; padding: 0 2rem 6rem; }
-
-    .page-label {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--rust); margin-bottom: 1rem;
-    }
-    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--warm-brown); margin-bottom: 0.5rem; }
-    .updated { font-size: 0.8rem; color: var(--muted); margin-bottom: 3rem; }
-
-    h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--warm-brown); margin: 2.5rem 0 0.75rem; }
-    p { font-size: 0.93rem; font-weight: 300; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
-    a { color: var(--rust); }
-
-    footer { text-align: center; padding: 2rem; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--light-line); }
-  </style>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script src="../../assets/js/main.js"></script>
 </head>
 <body>
   <nav>
-    <a href="index.html" class="nav-logo">← Tatiana</a>
-    <div class="lang-toggle">
-      <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
-      <button id="btn-en" onclick="setLang('en')">EN</button>
+    <span class="nav-logo">Privacy Policy — SourdoughCooker</span>
+    <div class="nav-right"></div>
+      <a href="index.html" class="back-link">← SourdoughCooker</a>
+      <div class="lang-toggle">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </nav>
 
@@ -92,7 +57,7 @@
   </main>
 
   <footer>
-    <p data-ru="© 2024 Tatiana" data-en="© 2024 Tatiana">© 2024 Tatiana</p>
+    <p data-ru="© 2026 Tatiana" data-en="© 2026 Tatiana">© 2026 Tatiana</p>
   </footer>
 
   <script>
