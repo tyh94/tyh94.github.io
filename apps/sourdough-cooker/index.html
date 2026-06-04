@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="sc.page.title"></title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <script src="../../assets/js/main.js"></script>
+</head>
+<body>
+  <nav>
+    <span class="nav-logo">SourdoughCooker</span>
+    <div class="nav-right">
+      <a href="../../index.html" class="back-link" data-i18n="nav.home"></a>
+      <div class="lang-toggle">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-page">
+
+    <section class="app-hero">
+      <img src="../../assets/sourdoughcooker-icon.jpeg"
+           alt="SourdoughCooker" class="app-hero-icon">
+      <h1 class="app-hero-title">SourdoughCooker</h1>
+      <p class="app-hero-sub" data-i18n="sc.page.sub"></p>
+      <span class="badge-soon" data-i18n="sc.page.soon"></span>
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="sc.page.about.h"></h2>
+      <div class="app-card">
+        <p data-i18n="sc.page.about.p"></p>
+        <ul class="feature-list">
+          <li data-i18n="sc.page.f1"></li>
+          <li data-i18n="sc.page.f2"></li>
+          <li data-i18n="sc.page.f3"></li>
+          <li data-i18n="sc.page.f4"></li>
+          <li data-i18n="sc.page.f5"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="sc.page.links.h"></h2>
+      <div class="app-links">
+        <a href="support.html" class="app-link-item">
+          <span class="app-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+          </span>
+          <span data-i18n="sc.page.support"></span>
+          <svg class="app-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="privacy.html" class="app-link-item">
+          <span class="app-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span data-i18n="sc.page.privacy"></span>
+          <svg class="app-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p data-i18n="footer.copy"></p>
+  </footer>
+</body>
+</html>

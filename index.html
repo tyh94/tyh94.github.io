@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tatiana — iOS Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title data-i18n="nav.title"></title>
   <link rel="stylesheet" href="assets/css/main.css">
   <script src="assets/js/main.js"></script>
 </head>
@@ -17,9 +14,9 @@
     <span class="nav-logo">T<span>.</span>mkv</span>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#about"      data-ru="Обо мне"    data-en="About">Обо мне</a></li>
-        <li><a href="#apps"       data-ru="Приложения" data-en="Apps">Приложения</a></li>
-        <li><a href="#contact"    data-ru="Контакт"    data-en="Contact">Контакт</a></li>
+        <li><a href="#about" data-i18n="nav.about"></a></li>
+        <li><a href="#apps" data-i18n="nav.apps"></a></li>
+        <li><a href="#contact" data-i18n="nav.contact"></a></li>
       </ul>
       <div class="lang-toggle">
         <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
@@ -32,20 +29,16 @@
   <div id="hero">
     <div class="hero-grid">
       <div class="hero-left">
-        <p class="hero-eyebrow" data-ru="Senior iOS Developer" data-en="Senior iOS Developer">Senior iOS Developer</p>
-        <h1 class="hero-name">Tatiana<br>Makeeva</h1>
-        <p class="hero-role" data-ru="8+ лет в iOS разработке" data-en="8+ years in iOS development">8+ лет в iOS разработке</p>
-        <p class="hero-desc"
-           data-ru="Разрабатываю нативные iOS-приложения с 2016 года. Работала в Movavi, Новотелеком, Improve Digital и Сбере. Сейчас строю собственные продукты."
-           data-en="Building native iOS apps since 2016. Worked at Movavi, Novotelecom, Improve Digital and Sber. Currently building my own products.">
-          Разрабатываю нативные iOS-приложения с 2016 года. Работала в Movavi, Новотелеком, Improve Digital и Сбере. Сейчас строю собственные продукты.
-        </p>
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 class="hero-name" data-i18n="hero.name"></h1>
+        <p class="hero-role" data-i18n="hero.role"></p>
+        <p class="hero-desc" data-i18n="hero.desc"></p>
         <div class="hero-actions">
           <a href="#apps" class="btn-primary">
-            <span data-ru="Мои приложения" data-en="My apps">Мои приложения</span>
+            <span data-i18n="hero.btn.apps"></span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#contact" class="btn-ghost" data-ru="Написать" data-en="Contact me">Написать</a>
+          <a href="#contact" class="btn-ghost" data-i18n="hero.btn.contact"></a>
         </div>
       </div>
     </div>
@@ -57,22 +50,13 @@
   <section id="about">
     <div class="container">
       <div class="reveal">
-        <p class="section-label" data-ru="Обо мне" data-en="About">Обо мне</p>
-        <h2 class="section-title" data-ru="iOS-инженер<br>из Новосибирска" data-en="iOS Engineer<br>from Novosibirsk">iOS-инженер<br>из Новосибирска</h2>
+        <p class="section-label" data-i18n="about.label"></p>
+        <h2 class="section-title" data-i18n="about.title"></h2>
       </div>
       <div class="about-body reveal">
-        <p data-ru="Начала карьеру в 2016-м в Movavi — делала мобильный видеоредактор на Objective-C. Постепенно переходила от рядового разработчика к тимлиду: в Improve Digital руководила ревью четырёх iOS-разработчиков."
-           data-en="Started my career in 2016 at Movavi building a mobile video editor in Objective-C. Grew from individual contributor to team lead: at Improve Digital I ran code reviews for a team of four iOS developers.">
-          Начала карьеру в 2016-м в Movavi — делала мобильный видеоредактор на Objective-C. Постепенно переходила от рядового разработчика к тимлиду: в Improve Digital руководила ревью четырёх iOS-разработчиков.
-        </p>
-        <p data-ru="С 2020 года в Сбере, в команде SberDevices — разрабатываю голосовой помощник. Пишу unit- и snapshot-тесты, профилирую retain-циклы, настраиваю AVAudioSession."
-           data-en="Since 2020 at Sber, on the SberDevices team — working on the voice assistant. I write unit and snapshot tests, profile retain cycles, and configure AVAudioSession.">
-          С 2020 года в Сбере, в команде SberDevices — разрабатываю голосовой помощник. Пишу unit- и snapshot-тесты, профилирую retain-циклы, настраиваю AVAudioSession.
-        </p>
-        <p data-ru="Параллельно делаю собственные приложения — первое уже в App Store скоро."
-           data-en="In parallel, I build my own apps — the first one is coming to the App Store soon.">
-          Параллельно делаю собственные приложения — первое уже в App Store скоро.
-        </p>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <p data-i18n="about.p3"></p>
         <div class="skills-wrap">
           <span class="skill-chip">Swift</span>
           <span class="skill-chip">SwiftUI</span>
@@ -99,28 +83,24 @@
   <section id="apps">
     <div class="container">
       <div class="reveal" style="margin-bottom:3rem;">
-        <p class="section-label" data-ru="Продукты" data-en="Products">Продукты</p>
-        <h2 class="section-title" data-ru="Мои приложения" data-en="My apps">Мои приложения</h2>
+        <p class="section-label" data-i18n="apps.label"></p>
+        <h2 class="section-title" data-i18n="apps.title"></h2>
       </div>
       <div class="apps-grid">
 
         <!-- SourdoughCooker -->
-        <a href="apps/sourdour-cooker/index.html" class="app-link">
+        <a href="apps/sourdough-cooker/index.html" class="app-link">
           <div class="app-card reveal">
             <div class="app-icon-box bread">
-                <img src="assets/sourdoughcooker-icon.jpeg" alt="SourdoughCooker" class="app-icon">
+              <img src="assets/sourdoughcooker-icon.jpeg" alt="SourdoughCooker" class="app-icon">
             </div>
             <div class="app-info">
-              <p class="app-cat" data-ru="Кулинария · iOS" data-en="Food & Baking · iOS">Кулинария · iOS</p>
+              <p class="app-cat" data-i18n="sc.cat"></p>
               <h3>SourdoughCooker</h3>
-              <p data-ru="Умный помощник для выпечки на закваске. Live Activity и Dynamic Island таймеры, пошаговые рецепты, уведомления."
-                data-en="Smart sourdough baking companion. Live Activity and Dynamic Island timers, step-by-step recipes, notifications.">
-                Умный помощник для выпечки на закваске. Live Activity и Dynamic Island таймеры, пошаговые рецепты, уведомления.
-              </p>
+              <p data-i18n="sc.desc"></p>
             </div>
             <div class="app-badge-wrap">
-              <!-- <a href="https://apps.apple.com/app/idXXXXXXXX" class="badge-store" target="_blank">App Store</a> -->
-              <span class="badge-soon" data-ru="Скоро" data-en="Coming Soon">Скоро</span>
+              <span class="badge-soon" data-i18n="sc.soon"></span>
             </div>
           </div>
         </a>
@@ -129,12 +109,12 @@
         <div class="app-card reveal">
           <div class="app-icon-box blue">🔵</div>
           <div class="app-info">
-            <p class="app-cat" data-ru="Категория · iOS" data-en="Category · iOS">Категория · iOS</p>
+            <p class="app-cat" data-i18n="..."></p>
             <h3>Название</h3>
-            <p data-ru="Описание RU" data-en="Description EN">Описание RU</p>
+            <p data-i18n="..."></p>
           </div>
           <div class="app-badge-wrap">
-            <span class="badge-soon" data-ru="Скоро" data-en="Coming Soon">Скоро</span>
+            <span class="badge-soon" data-i18n="..."></span>
           </div>
         </div>
         -->
@@ -148,13 +128,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container reveal">
-      <p class="section-label" data-ru="Контакт" data-en="Contact">Контакт</p>
-      <h2 class="contact-title" data-ru="Давайте<br><span>поговорим</span>" data-en="Let's<br><span>talk</span>">Давайте<br><span>поговорим</span></h2>
-      <p class="contact-sub"
-         data-ru="Открыта к вопросам, коллаборациям и разговорам о Swift, архитектуре или хлебе на закваске."
-         data-en="Open to questions, collaborations, and conversations about Swift, architecture, or sourdough.">
-        Открыта к вопросам, коллаборациям и разговорам о Swift, архитектуре или хлебе на закваске.
-      </p>
+      <p class="section-label" data-i18n="contact.label"></p>
+      <h2 class="contact-title" data-i18n="contact.title"></h2>
+      <p class="contact-sub" data-i18n="contact.sub"></p>
       <div class="contact-row">
         <a href="mailto:tyh94@mail.ru" class="clink primary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
@@ -177,27 +153,7 @@
   </section>
 
   <footer>
-    <p data-ru="© 2026 Татьяна Макеева" data-en="© 2026 Tatiana Makeeva">© 2026 Татьяна Макеева</p>
+    <p data-i18n="footer.copy"></p>
   </footer>
-
-  <script>
-    function setLang(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-ru]").forEach(el => {
-        el.innerHTML = el.getAttribute("data-" + lang);
-      });
-      document.getElementById("btn-ru").classList.toggle("active", lang === "ru");
-      document.getElementById("btn-en").classList.toggle("active", lang === "en");
-      localStorage.setItem("lang", lang);
-    }
-    const saved = localStorage.getItem("lang") || "ru";
-    if (saved === "en") setLang("en");
-
-    // scroll reveal
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll(".reveal, .exp-item").forEach(el => io.observe(el));
-  </script>
 </body>
 </html>
