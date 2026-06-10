@@ -38,6 +38,8 @@ const translations = {
     "sc.page.links.h":  "Ссылки",
     "sc.page.support":  "Поддержка",
     "sc.page.privacy":  "Политика конфиденциальности",
+    "sc.page.perms.h": "Разрешения",
+    "sc.page.perms.p": "Приложение запрашивает разрешение на отправку уведомлений — исключительно для напоминания об окончании таймеров выпечки. Никакие персональные данные не собираются и не передаются третьим лицам.",
 
     "contact.label":    "Контакт",
     "contact.title":    "Давайте<br><span>поговорим</span>",
@@ -121,6 +123,8 @@ const translations = {
     "sc.page.links.h":  "Links",
     "sc.page.support":  "Support",
     "sc.page.privacy":  "Privacy Policy",
+    "sc.page.perms.h": "Permissions",
+    "sc.page.perms.p": "The app requests notification permission solely to alert you when a baking timer ends. No personal data is collected or shared with third parties.",
 
     "contact.label":    "Contact",
     "contact.title":    "Let's<br><span>talk</span>",
