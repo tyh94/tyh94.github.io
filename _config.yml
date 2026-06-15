@@ -1,0 +1,9 @@
+title: T.mkv
+url: "https://tyh94.github.io"
+permalink: pretty        # убирает .html из URL
+
+# Исключить всё лишнее из сборки
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
