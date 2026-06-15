@@ -40,6 +40,7 @@ const translations = {
     "sc.page.privacy":  "Политика конфиденциальности",
     "sc.page.perms.h": "Разрешения",
     "sc.page.perms.p": "Приложение запрашивает разрешение на отправку уведомлений — исключительно для напоминания об окончании таймеров выпечки. Никакие персональные данные не собираются и не передаются третьим лицам.",
+    "sc.page.terms": "Условия использования",
 
     "contact.label":    "Контакт",
     "contact.title":    "Давайте<br><span>поговорим</span>",
@@ -82,7 +83,35 @@ const translations = {
     "privacy.h5":       "Изменения в политике",
     "privacy.p5":       "Если политика изменится, новая версия будет опубликована на этой странице с обновлённой датой.",
     "privacy.h6":       "Контакт",
-    "privacy.p6":       "По любым вопросам о конфиденциальности пишите на:"
+    "privacy.p6":       "По любым вопросам о конфиденциальности пишите на:",
+
+    "tos.title":  "Условия использования",
+    "tos.updated": "Последнее обновление: июнь 2026",
+    "tos.back":     "← SourdoughCooker",
+
+    "tos.s1.h": "1. Принятие условий",
+    "tos.s1.p": "Загружая или используя SourdoughCooker, вы соглашаетесь с настоящими Условиями использования. Если вы не согласны, пожалуйста, не используйте приложение.",
+
+    "tos.s2.h": "2. Описание сервиса",
+    "tos.s2.p": "SourdoughCooker — помощник по выпечке на закваске для iPhone. Приложение помогает управлять рецептами, отслеживать таймеры ферментации и следовать пошаговым инструкциям.",
+
+    "tos.s3.h": "3. Интеграция с Google Drive",
+    "tos.s3.p": "Приложение предлагает опциональное резервное копирование рецептов в Google Drive. Для этого требуется вход в аккаунт Google. Мы запрашиваем только минимально необходимые разрешения (доступ к файлам, созданным этим приложением). Мы не получаем доступ, не храним и не передаём другие файлы из вашего Google Drive. Вы можете отозвать доступ в любой момент через настройки аккаунта Google.",
+
+    "tos.s4.h": "4. Пользовательский контент",
+    "tos.s4.p": "Рецепты и данные о выпечке, созданные вами в приложении, принадлежат вам. Данные хранятся локально на устройстве. Резервное копирование в облако — опционально и под вашим контролем.",
+
+    "tos.s5.h": "5. Ограничения использования",
+    "tos.s5.p": "Вы соглашаетесь не злоупотреблять приложением, не пытаться осуществить его реверс-инжиниринг и не использовать его способами, нарушающими применимое законодательство.",
+
+    "tos.s6.h": "6. Отказ от ответственности",
+    "tos.s6.p": "Приложение предоставляется «как есть», без каких-либо гарантий. Мы не несём ответственности за потерю данных или ущерб, возникший в результате использования приложения.",
+
+    "tos.s7.h": "7. Изменения",
+    "tos.s7.p": "Мы можем периодически обновлять настоящие условия. Продолжение использования приложения после внесения изменений означает принятие новых условий.",
+
+    "tos.s8.h": "8. Контакты",
+    "tos.s8.p": "Есть вопросы? Свяжитесь с нами через <a href=\"support.html\">страницу поддержки</a>.",
   },
   en: {
     "nav.about":        "About",
@@ -125,6 +154,7 @@ const translations = {
     "sc.page.privacy":  "Privacy Policy",
     "sc.page.perms.h": "Permissions",
     "sc.page.perms.p": "The app requests notification permission solely to alert you when a baking timer ends. No personal data is collected or shared with third parties.",
+    "sc.page.terms": "Terms of Service",
 
     "contact.label":    "Contact",
     "contact.title":    "Let's<br><span>talk</span>",
@@ -167,7 +197,35 @@ const translations = {
     "privacy.h5":       "Changes to This Policy",
     "privacy.p5":       "If the policy changes, the new version will be published on this page with an updated date.",
     "privacy.h6":       "Contact",
-    "privacy.p6":       "For any privacy questions, please contact:"
+    "privacy.p6":       "For any privacy questions, please contact:",
+
+    "tos.title":  "Terms of Service",   
+    "tos.updated": "Last updated: June 2026",
+    "tos.back":     "← SourdoughCooker",
+
+    "tos.s1.h": "1. Acceptance",
+    "tos.s1.p": "By downloading or using SourdoughCooker, you agree to these Terms of Service. If you do not agree, please do not use the app.",
+
+    "tos.s2.h": "2. Description of Service",
+    "tos.s2.p": "SourdoughCooker is a baking assistant app for iPhone that helps you manage sourdough recipes, track fermentation timers, and follow step-by-step baking instructions.",
+
+    "tos.s3.h": "3. Google Drive Integration",
+    "tos.s3.p": "The app offers optional backup of your recipes to Google Drive. This requires you to sign in with your Google account. We request only the minimum necessary permissions (access to files created by this app). We do not access, store, or share any other files from your Google Drive. You may revoke access at any time via your Google account settings.",
+
+    "tos.s4.h": "4. User Content",
+    "tos.s4.p": "Recipes and baking data you create in the app belong to you. The app stores this data locally on your device. Cloud backup is optional and under your control.",
+
+    "tos.s5.h": "5. Prohibited Use",
+    "tos.s5.p": "You agree not to misuse the app, attempt to reverse-engineer it, or use it in any way that violates applicable laws.",
+
+    "tos.s6.h": "6. Disclaimer",
+    "tos.s6.p": "The app is provided \"as is\" without warranties of any kind. We are not responsible for any loss of data or damages arising from use of the app.",
+
+    "tos.s7.h": "7. Changes",
+    "tos.s7.p": "We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.",
+
+    "tos.s8.h": "8. Contact",
+    "tos.s8.p": "Questions? Reach us via the <a href=\"support.html\">support page</a>.",
   }
 }
 
@@ -183,7 +241,14 @@ function applyTranslations(lang) {
   });
   document.getElementById("btn-ru")?.classList.toggle("active", lang === "ru");
   document.getElementById("btn-en")?.classList.toggle("active", lang === "en");
+
+  // App Store badge locale
+  const badge = document.getElementById("appstore-badge");
+  if (badge) {
+    badge.src = `https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/${lang === "ru" ? "ru-ru" : "en-us"}`;
+  }
 }
+
 
 function setLang(lang) {
   currentLang = lang;
