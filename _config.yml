@@ -1,6 +1,8 @@
 title: T.mkv
 url: "https://tyh94.github.io"
 permalink: pretty        # убирает .html из URL
+plugins:
+  - jekyll-sitemap
 
 # Исключить всё лишнее из сборки
 exclude:
