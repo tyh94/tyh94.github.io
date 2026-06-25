@@ -1,0 +1,166 @@
+---
+---
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ffd.page.title">Family Food Diary — Family Nutrition Tracker</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/main.js"></script>
+</head>
+<body>
+  <nav>
+    <span class="nav-logo" data-i18n="ffd.page.title"></span>
+    <div class="nav-right">
+      <a href="/" class="back-link" data-i18n="nav.home"></a>
+      <div class="lang-toggle">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-page">
+
+    <section class="app-hero">
+      <img src="/assets/family-food-diary-icon.png"
+           alt="Family Food Diary"
+           class="app-hero-icon">
+
+      <h1 class="app-hero-title">Family Food Diary</h1>
+
+      <p class="app-hero-sub" data-i18n="ffd.page.sub">
+        Track nutrition for the whole family. Monitor calories,
+        protein, vitamins, minerals and other nutrients in one place.
+      </p>
+
+      <span class="badge-soon" data-i18n="page.soon"></span>
+      <!-- <a href="APP_STORE_LINK"
+         target="_blank"
+         rel="noopener">
+        <img id="appstore-badge"
+             src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
+             alt="Download on the App Store"
+             style="height: 44px;">
+      </a> -->
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="ffd.page.about.h">About the App</h2>
+
+      <div class="app-card">
+
+        <p data-i18n="ffd.page.about.p">
+          Family Food Diary helps you keep nutrition records for the entire family.
+          Add meals, monitor nutrient intake and discover eating habits over time.
+        </p>
+
+        <ul class="feature-list">
+          <li data-i18n="ffd.page.f1">
+            Track nutrition for multiple family members
+          </li>
+
+          <li data-i18n="ffd.page.f2">
+            Monitor calories, protein, fat and carbohydrates
+          </li>
+
+          <li data-i18n="ffd.page.f3">
+            Analyze vitamins, minerals and micronutrients
+          </li>
+
+          <li data-i18n="ffd.page.f4">
+            Discover top foods by iron, magnesium and other nutrients
+          </li>
+
+          <li data-i18n="ffd.page.f5">
+            Store your data on Google Drive or Yandex Disk
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="ffd.page.why.h"></h2>
+
+      <div class="app-card">
+        <ul class="feature-list">
+          <li data-i18n="ffd.page.why.f1"></li>
+          <li data-i18n="ffd.page.why.f2"></li>
+          <li data-i18n="ffd.page.why.f3"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="ffd.page.privacy.h">
+        Your Data
+      </h2>
+
+      <div class="app-card">
+        <p data-i18n="ffd.page.privacy.p">
+          Family Food Diary does not operate its own cloud servers.
+          Your data can be stored in your personal Google Drive
+          or Yandex Disk account, giving you full control over your information.
+        </p>
+      </div>
+    </section>
+
+    <section class="app-section">
+      <h2 data-i18n="ffd.page.links.h">Links</h2>
+
+      <div class="app-links">
+
+        <a href="support/" class="app-link-item">
+          <span class="app-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+            </svg>
+          </span>
+          <span data-i18n="ffd.page.support">Support</span>
+          <svg class="app-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="privacy/" class="app-link-item">
+          <span class="app-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </span>
+          <span data-i18n="ffd.page.privacy">Privacy Policy</span>
+          <svg class="app-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="terms/" class="app-link-item">
+          <span class="app-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </span>
+          <span data-i18n="ffd.page.terms">Terms of Use</span>
+          <svg class="app-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p data-i18n="footer.copy"></p>
+  </footer>
+
+</body>
+</html>

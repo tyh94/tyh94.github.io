@@ -21,13 +21,13 @@ const translations = {
 
     "apps.label":       "Продукты",
     "apps.title":       "Мои приложения",
+    "page.soon":        "Скоро в App Store",
+    "soon":             "Скоро",
 
     "sc.cat":           "Кулинария · iOS",
     "sc.desc":          "Умный помощник для выпечки на закваске. Live Activity и Dynamic Island таймеры, пошаговые рецепты, уведомления.",
-    "sc.soon":          "Скоро",
     "sc.page.title":    "SourdoughCooker — помощник пекаря",
     "sc.page.sub":      "Умный помощник для выпечки хлеба на закваске. Управляйте этапами ферментации, таймерами и рецептами — не пропустите ни одного шага.",
-    "sc.page.soon":     "Скоро в App Store",
     "sc.page.about.h":  "О приложении",
     "sc.page.about.p":  "SourdoughCooker помогает домашним пекарям управлять каждым этапом выпечки хлеба на закваске.",
     "sc.page.f1":       "Пошаговые сценарии выпечки",
@@ -87,7 +87,7 @@ const translations = {
     "sc.privacy.p6":       "По любым вопросам о конфиденциальности пишите на:",
 
     "sc.tos.title":  "Условия использования",
-    "sc.tos.updated": "Последнее обновление: июнь 2026",
+    "sc.tos.updated": "Последнее обновление: 25 июня 2026",
     "sc.tos.back":     "← SourdoughCooker",
 
     "sc.tos.s1.h": "1. Принятие условий",
@@ -112,6 +112,117 @@ const translations = {
     "sc.tos.s7.p": "Мы можем периодически обновлять настоящие условия. Продолжение использования приложения после внесения изменений означает принятие новых условий.",
 
     "sc.tos.s8.h": "8. Контакты",
+
+    "ffd.cat": "Питание и здоровье",
+    "ffd.desc": "Дневник питания для всей семьи с анализом калорий, витаминов, минералов и других нутриентов.",
+
+    "ffd.page.title": "Family Food Diary — Дневник питания семьи",
+
+    "ffd.page.sub": "Следите за рационом всей семьи. Контролируйте калории, БЖУ, железо, магний, витамины и другие нутриенты.",
+
+    "ffd.page.about.h": "Возможности",
+
+    "ffd.page.about.p": "Удобный способ вести дневник питания для всей семьи и анализировать качество рациона.",
+
+    "ffd.page.f1": "Добавляйте записи для нескольких членов семьи",
+    "ffd.page.f2": "Отслеживайте калории, белки, жиры и углеводы",
+    "ffd.page.f3": "Контролируйте железо, магний, кальций, витамины и другие нутриенты",
+    "ffd.page.f4": "Находите продукты-лидеры по содержанию полезных веществ",
+    "ffd.page.f5": "Изучайте статистику и историю питания",
+
+    "ffd.page.why.h": "Почему Family Food Diary?",
+
+    "ffd.page.why.f1": "Для всей семьи — ведите записи для себя, детей и близких",
+    "ffd.page.why.f2": "Не только калории — анализируйте десятки витаминов и минералов",
+    "ffd.page.why.f3": "Ваши данные остаются у вас — хранение на Google Drive или Яндекс Диске",
+
+    "ffd.page.privacy.h": "Ваши данные",
+
+    "ffd.page.privacy.p": "Приложение не использует собственные серверы для хранения данных. Вы сами выбираете, где хранить свой дневник питания — в Google Drive или Яндекс Диске.",
+
+    "ffd.page.links.h": "Полезные ссылки",
+    "ffd.page.support": "Поддержка",
+    "ffd.page.privacy": "Политика конфиденциальности",
+    "ffd.page.terms": "Условия использования",
+
+    "ffd.privacy.page.title": "Политика конфиденциальности — Family Food Diary",
+    "ffd.privacy.nav.title": "Политика конфиденциальности",
+    "ffd.privacy.back": "← Назад",
+    "ffd.privacy.label": "Family Food Diary",
+    "ffd.privacy.title": "Политика конфиденциальности",
+    "ffd.privacy.updated": "Последнее обновление: 25 июня 2026 г.",
+
+    "ffd.privacy.h1": "1. Общие положения",
+    "ffd.privacy.p1": "Family Food Diary уважает вашу конфиденциальность. Приложение предназначено для ведения дневника питания и не собирает персональные данные для передачи третьим лицам.",
+
+    "ffd.privacy.h2": "2. Какие данные хранятся",
+    "ffd.privacy.p2": "Приложение может хранить информацию о приёмах пищи, продуктах, фотографиях блюд, статистике питания и других данных, которые вы добавляете самостоятельно.",
+
+    "ffd.privacy.h3": "3. Где хранятся данные",
+    "ffd.privacy.p3": "Данные хранятся локально на вашем устройстве и/или в выбранном вами облачном хранилище (Google Drive или Яндекс Диск). Разработчик приложения не имеет доступа к этим данным.",
+
+    "ffd.privacy.h4": "4. Передача данных третьим лицам",
+    "ffd.privacy.p4": "Приложение не продаёт, не передаёт и не предоставляет ваши данные третьим лицам. Все данные остаются под вашим контролем.",
+
+    "ffd.privacy.h5": "5. Разрешения",
+    "ffd.privacy.p5": "Приложение может запрашивать доступ к фотографиям для добавления изображений блюд и доступ к облачным сервисам для синхронизации данных. Эти разрешения используются только для функций приложения.",
+
+    "ffd.privacy.h6": "6. Контакты",
+    "ffd.privacy.p6": "Если у вас есть вопросы о политике конфиденциальности, свяжитесь с разработчиком:",
+
+    "ffd.support.page.title": "Поддержка — Family Food Diary",
+    "ffd.support.nav.title": "Поддержка",
+    "ffd.support.back": "← Назад",
+
+    "ffd.support.label": "Family Food Diary",
+    "ffd.support.title": "Поддержка",
+    "ffd.support.sub": "Ответы на часто задаваемые вопросы.",
+
+    "ffd.support.q1": "Можно ли вести дневник для нескольких членов семьи?",
+    "ffd.support.a1": "Да. Приложение позволяет хранить данные о питании нескольких членов семьи и быстро переключаться между ними.",
+
+    "ffd.support.q2": "Где хранятся мои данные?",
+    "ffd.support.a2": "Данные могут храниться локально на устройстве и в выбранном вами облачном хранилище — Google Drive или Яндекс Диске. Разработчик приложения не имеет доступа к вашим данным.",
+
+    "ffd.support.q3": "Какие нутриенты поддерживаются?",
+    "ffd.support.a3": "Помимо калорий, белков, жиров и углеводов приложение поддерживает витамины, минералы и другие показатели пищевой ценности продуктов.",
+
+    "ffd.support.q4": "Можно ли посмотреть статистику по рациону?",
+    "ffd.support.a4": "Да. Приложение показывает статистику питания, помогает отслеживать потребление нутриентов и находить продукты с наибольшим содержанием полезных веществ.",
+
+    "ffd.support.contact.h": "Связаться с разработчиком",
+    "ffd.support.contact.p": "Если вы столкнулись с проблемой или хотите предложить улучшение приложения, напишите мне.",
+    "ffd.support.contact.btn": "Написать письмо",
+
+    "ffd.tos.back": "← Назад",
+
+    "ffd.tos.title": "Условия использования",
+    "ffd.tos.updated": "Последнее обновление: 25 июня 2026 г.",
+
+    "ffd.tos.s1.h": "1. Принятие условий",
+    "ffd.tos.s1.p": "Используя приложение Family Food Diary, вы соглашаетесь с настоящими условиями использования. Если вы не согласны с ними, пожалуйста, не используйте приложение.",
+
+    "ffd.tos.s2.h": "2. Описание сервиса",
+    "ffd.tos.s2.p": "Family Food Diary — приложение для учёта питания, которое помогает вести дневник приёмов пищи, отслеживать нутриенты и анализировать рацион нескольких членов семьи.",
+
+    "ffd.tos.s3.h": "3. Интеграция с облачными хранилищами",
+    "ffd.tos.s3.p": "Приложение поддерживает резервное копирование и синхронизацию через Google Drive и Яндекс Диск. Доступ ограничен файлами, необходимыми для работы приложения. Разработчик не получает доступ к вашим данным и не передаёт их третьим лицам.",
+
+    "ffd.tos.s4.h": "4. Пользовательские данные",
+    "ffd.tos.s4.p": "Записи о питании, фотографии блюд, статистика и другие данные, созданные в приложении, принадлежат вам. Информация хранится локально на устройстве и/или в выбранном вами облачном хранилище.",
+
+    "ffd.tos.s5.h": "5. Допустимое использование",
+    "ffd.tos.s5.p": "Запрещается использовать приложение с нарушением законодательства, пытаться модифицировать его работу, обходить ограничения или выполнять обратную разработку.",
+
+    "ffd.tos.s6.h": "6. Ограничение ответственности",
+    "ffd.tos.s6.p": "Приложение предоставляется «как есть» без каких-либо гарантий. Разработчик не несёт ответственности за потерю данных, неточности в пищевой информации или любой ущерб, связанный с использованием приложения.",
+
+    "ffd.tos.s7.h": "7. Изменение условий",
+    "ffd.tos.s7.p": "Условия использования могут периодически обновляться. Продолжение использования приложения после публикации изменений означает согласие с новой редакцией условий.",
+
+    "ffd.tos.s8.h": "8. Контакты",
+    "ffd.tos.s8.p": "Если у вас есть вопросы относительно условий использования, свяжитесь с разработчиком через страницу поддержки.",
+
   },
   en: {
     "nav.about":        "About",
@@ -135,13 +246,13 @@ const translations = {
 
     "apps.label":       "Products",
     "apps.title":       "My apps",
+    "page.soon":        "Coming Soon to App Store",
+    "soon":             "Coming Soon",
 
     "sc.cat":           "Food & Baking · iOS",
     "sc.desc":          "Smart sourdough baking companion. Live Activity and Dynamic Island timers, step-by-step recipes, notifications.",
-    "sc.soon":          "Coming Soon",
     "sc.page.title":    "SourdoughCooker — Baking Assistant",
     "sc.page.sub":      "Sourdough baking assistant for iPhone. Track fermentation stages, manage timers, follow recipes and never miss an important step.",
-    "sc.page.soon":     "Coming Soon to App Store",
     "sc.page.about.h":  "About",
     "sc.page.about.p":  "SourdoughCooker helps home bakers manage every stage of sourdough bread making.",
     "sc.page.f1":       "Step-by-step baking workflows",
@@ -201,7 +312,7 @@ const translations = {
     "sc.privacy.p6":       "For any privacy questions, please contact:",
 
     "sc.tos.title":  "Terms of Service",   
-    "sc.tos.updated": "Last updated: June 2026",
+    "sc.tos.updated": "Last updated: June 25 2026",
     "sc.tos.back":     "← SourdoughCooker",
 
     "sc.tos.s1.h": "1. Acceptance",
@@ -227,6 +338,116 @@ const translations = {
 
     "sc.tos.s8.h": "8. Contact",
     "sc.tos.s8.p": "Questions? Reach us via the <a href=\"support.html\">support page</a>.",
+
+    "ffd.cat": "Nutrition & Health",
+    "ffd.desc": "Nutrition tracker for the whole family with calorie, vitamin, mineral and nutrient analysis.",
+
+    "ffd.page.title": "Family Food Diary — Family Nutrition Tracker",
+
+    "ffd.page.sub": "Track nutrition for the whole family. Monitor calories, macronutrients, iron, magnesium, vitamins and other essential nutrients.",
+
+    "ffd.page.about.h": "Features",
+
+    "ffd.page.about.p": "An easy way to keep nutrition records for your entire family and gain insights into eating habits.",
+
+    "ffd.page.f1": "Track meals for multiple family members",
+    "ffd.page.f2": "Monitor calories, protein, fat and carbohydrates",
+    "ffd.page.f3": "Track iron, magnesium, calcium, vitamins and other nutrients",
+    "ffd.page.f4": "Discover your top foods by nutrient content",
+    "ffd.page.f5": "View nutrition history and statistics",
+
+    "ffd.page.why.h": "Why Family Food Diary?",
+
+    "ffd.page.why.f1": "Built for families — track nutrition for yourself, your children and loved ones",
+    "ffd.page.why.f2": "More than calories — analyze dozens of vitamins and minerals",
+    "ffd.page.why.f3": "Your data stays yours — stored in your Google Drive or Yandex Disk",
+
+    "ffd.page.privacy.h": "Your Data",
+
+    "ffd.page.privacy.p": "The app does not use its own cloud servers. You choose where your nutrition diary is stored: Google Drive or Yandex Disk.",
+
+    "ffd.page.links.h": "Useful Links",
+    "ffd.page.support": "Support",
+    "ffd.page.privacy": "Privacy Policy",
+    "ffd.page.terms": "Terms of Use",
+
+    "ffd.privacy.page.title": "Privacy Policy — Family Food Diary",
+    "ffd.privacy.nav.title": "Privacy Policy",
+    "ffd.privacy.back": "← Back",
+    "ffd.privacy.label": "Family Food Diary",
+    "ffd.privacy.title": "Privacy Policy",
+    "ffd.privacy.updated": "Last updated: June 25, 2026",
+
+    "ffd.privacy.h1": "1. General",
+    "ffd.privacy.p1": "Family Food Diary respects your privacy. The app is designed for nutrition tracking and does not collect personal information for sharing with third parties.",
+
+    "ffd.privacy.h2": "2. Information Stored",
+    "ffd.privacy.p2": "The app may store meal records, food items, meal photos, nutrition statistics and other information that you choose to enter.",
+
+    "ffd.privacy.h3": "3. Data Storage",
+    "ffd.privacy.p3": "Your data is stored locally on your device and/or in cloud storage selected by you (Google Drive or Yandex Disk). The developer does not have access to your data.",
+
+    "ffd.privacy.h4": "4. Third-Party Sharing",
+    "ffd.privacy.p4": "The app does not sell, share or provide your data to third parties. All information remains under your control.",
+
+    "ffd.privacy.h5": "5. Permissions",
+    "ffd.privacy.p5": "The app may request access to photos for attaching meal images and access to cloud storage services for synchronization. These permissions are used only to provide app functionality.",
+
+    "ffd.privacy.h6": "6. Contact",
+    "ffd.privacy.p6": "If you have any questions regarding this Privacy Policy, please contact:",
+
+    "ffd.support.page.title": "Support — Family Food Diary",
+    "ffd.support.nav.title": "Support",
+    "ffd.support.back": "← Back",
+
+    "ffd.support.label": "Family Food Diary",
+    "ffd.support.title": "Support",
+    "ffd.support.sub": "Frequently asked questions.",
+
+    "ffd.support.q1": "Can I track nutrition for multiple family members?",
+    "ffd.support.a1": "Yes. The app allows you to keep nutrition records for multiple family members and quickly switch between them.",
+
+    "ffd.support.q2": "Where is my data stored?",
+    "ffd.support.a2": "Your data can be stored locally on your device and in cloud storage selected by you, such as Google Drive or Yandex Disk. The developer does not have access to your data.",
+
+    "ffd.support.q3": "Which nutrients are supported?",
+    "ffd.support.a3": "In addition to calories, protein, fat and carbohydrates, the app supports vitamins, minerals and many other nutritional values.",
+
+    "ffd.support.q4": "Can I view nutrition statistics?",
+    "ffd.support.a4": "Yes. The app provides nutrition statistics, helps you track nutrient intake and identify foods that contribute the most beneficial nutrients to your diet.",
+
+    "ffd.support.contact.h": "Contact the Developer",
+    "ffd.support.contact.p": "If you have a question, found a bug, or would like to suggest an improvement, feel free to contact me.",
+    "ffd.support.contact.btn": "Send Email",
+
+    "ffd.tos.back": "← Back",
+
+    "ffd.tos.title": "Terms of Service",
+    "ffd.tos.updated": "Last updated: June 25 2026",
+
+    "ffd.tos.s1.h": "1. Acceptance",
+    "ffd.tos.s1.p": "By downloading or using Family Food Diary, you agree to these Terms of Service. If you do not agree, please do not use the app.",
+
+    "ffd.tos.s2.h": "2. Description of Service",
+    "ffd.tos.s2.p": "Family Food Diary is a nutrition tracking application that helps users record meals, monitor nutrient intake, and analyze nutrition statistics for multiple family members.",
+
+    "ffd.tos.s3.h": "3. Cloud Storage Integration",
+    "ffd.tos.s3.p": "The app offers optional synchronization and backup through cloud storage services such as Google Drive and Yandex Disk. Access is limited to files required by the app. The developer does not access, store, or share your cloud files.",
+
+    "ffd.tos.s4.h": "4. User Data",
+    "ffd.tos.s4.p": "Nutrition records, meal photos, statistics, and other content created in the app belong to you. The app stores this information locally on your device and/or in cloud storage chosen by you.",
+
+    "ffd.tos.s5.h": "5. Acceptable Use",
+    "ffd.tos.s5.p": "You agree not to misuse the app, attempt to reverse-engineer it, interfere with its operation, or use it in violation of applicable laws.",
+
+    "ffd.tos.s6.h": "6. Disclaimer",
+    "ffd.tos.s6.p": "The app is provided \"as is\" without warranties of any kind. The developer is not responsible for data loss, inaccurate nutritional information, or damages arising from use of the app.",
+
+    "ffd.tos.s7.h": "7. Changes to Terms",
+    "ffd.tos.s7.p": "These Terms may be updated from time to time. Continued use of the app after changes become effective constitutes acceptance of the updated Terms.",
+
+    "ffd.tos.s8.h": "8. Contact",
+    "ffd.tos.s8.p": "If you have questions regarding these Terms, please contact the developer through the support page.",
   }
 }
 
