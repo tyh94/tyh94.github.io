@@ -48,7 +48,7 @@ const translations = {
 
     "footer.copy":      "© 2026 Татьяна Макеева",
 
-    "sc.tos.s8.p": "Есть вопросы? Свяжитесь с нами через <a href=\"support.html\">страницу поддержки</a>.",
+    "sc.tos.s8.p": "Есть вопросы? Свяжитесь с нами через <a href=\"../support/\">страницу поддержки</a>.",
     "sc.support.nav.title": "Поддержка",
     "sc.support.back":     "← SourdoughCooker",
     "sc.support.page.title": "Поддержка — SourdoughCooker",
@@ -275,7 +275,7 @@ const translations = {
 
     "sc.support.nav.title": "Support",
     "sc.support.page.title": "Support — SourdoughCooker",
-    "sc.tos.s8.p": "Questions? Reach us via the <a href=\"support.html\">support page</a>.",
+    "sc.tos.s8.p": "Questions? Reach us via the <a href=\"../support/\">support page</a>.",
     "sc.support.back":      "← SourdoughCooker",
     "sc.support.label":    "Help",
     "sc.support.title":    "Support",
@@ -337,7 +337,7 @@ const translations = {
     "sc.tos.s7.p": "We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.",
 
     "sc.tos.s8.h": "8. Contact",
-    "sc.tos.s8.p": "Questions? Reach us via the <a href=\"support.html\">support page</a>.",
+    "sc.tos.s8.p": "Questions? Reach us via the <a href=\"../support/\">support page</a>.",
 
     "ffd.cat": "Nutrition & Health",
     "ffd.desc": "Nutrition tracker for the whole family with calorie, vitamin, mineral and nutrient analysis.",
