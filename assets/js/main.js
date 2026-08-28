@@ -150,25 +150,40 @@ const translations = {
     "ffd.privacy.back": "← Назад",
     "ffd.privacy.label": "Family Food Diary",
     "ffd.privacy.title": "Политика конфиденциальности",
-    "ffd.privacy.updated": "Последнее обновление: 25 июня 2026 г.",
+    "ffd.privacy.updated": "Последнее обновление: 28 августа 2026 г.",
 
     "ffd.privacy.h1": "1. Общие положения",
     "ffd.privacy.p1": "Family Food Diary уважает вашу конфиденциальность. Приложение предназначено для ведения дневника питания и не собирает персональные данные для передачи третьим лицам.",
 
     "ffd.privacy.h2": "2. Какие данные хранятся",
-    "ffd.privacy.p2": "Приложение может хранить информацию о приёмах пищи, продуктах, фотографиях блюд, статистике питания и других данных, которые вы добавляете самостоятельно.",
+    "ffd.privacy.p2": "Всё, что вы вносите сами: приёмы пищи, продукты и блюда с их составом, статистику питания, а также профили членов семьи — имя, дату рождения и личные нормы по нутриентам.",
 
-    "ffd.privacy.h3": "3. Где хранятся данные",
-    "ffd.privacy.p3": "Данные хранятся локально на вашем устройстве и/или в выбранном вами облачном хранилище (Google Drive или Яндекс Диск). Разработчик приложения не имеет доступа к этим данным.",
+    "ffd.privacy.h3": "3. Данные о здоровье",
+    "ffd.privacy.p3": "Приложение хранит историю замеров веса и роста для каждого профиля и дату рождения — по ней подбираются возрастные нормы питания. Эти данные хранятся там же, где остальные, и никуда не отправляются, кроме выбранного вами облачного хранилища.",
 
-    "ffd.privacy.h4": "4. Передача данных третьим лицам",
-    "ffd.privacy.p4": "Приложение не продаёт, не передаёт и не предоставляет ваши данные третьим лицам. Все данные остаются под вашим контролем.",
+    "ffd.privacy.h4": "4. Где хранятся данные",
+    "ffd.privacy.p4": "Локально на вашем устройстве и, если вы это включили, в выбранном вами облаке — Google Drive или Яндекс Диск. Файлы лежат в вашем личном аккаунте, разработчик доступа к ним не имеет и копий у себя не хранит.",
 
-    "ffd.privacy.h5": "5. Разрешения",
-    "ffd.privacy.p5": "Приложение может запрашивать доступ к фотографиям для добавления изображений блюд и доступ к облачным сервисам для синхронизации данных. Эти разрешения используются только для функций приложения.",
+    "ffd.privacy.h5": "5. Apple Health",
+    "ffd.privacy.p5": "На iPhone синхронизацию веса и роста с приложением «Здоровье» можно включить по желанию — по умолчанию она выключена. Чтение и запись происходят только по вашему действию, доступ выдаётся отдельно на чтение и на запись и отзывается в настройках iOS. Данные из Health остаются на устройстве и в вашем облаке: разработчику они не передаются и в аналитику не попадают.",
 
-    "ffd.privacy.h6": "6. Контакты",
-    "ffd.privacy.p6": "Если у вас есть вопросы о политике конфиденциальности, свяжитесь с разработчиком:",
+    "ffd.privacy.h6": "6. Помощник на основе языковой модели",
+    "ffd.privacy.p6": "Разбор рациона можно запросить у языковой модели. Эта функция выключена и работает, только если вы сами подключили сервис и указали свой ключ доступа. При запросе на выбранный вами сервис (например, OpenAI, DeepSeek или другой из списка) отправляется сводка за период: имя профиля, вес, суммы нутриентов по дням и список продуктов. Обработка на стороне такого сервиса регулируется его собственной политикой. Ключ доступа хранится в защищённом хранилище устройства и разработчику не передаётся. Не пользуйтесь этой функцией, если не хотите передавать данные о питании третьей стороне.",
+
+    "ffd.privacy.h7": "7. Аналитика и отчёты о сбоях",
+    "ffd.privacy.p7": "Приложение использует Firebase Analytics и Firebase Crashlytics (Google) — обезличенную статистику использования и отчёты об аварийных завершениях: модель устройства, версию ОС и приложения, техническое описание сбоя. Дневник питания, замеры и содержимое профилей в эти отчёты не попадают.",
+
+    "ffd.privacy.h8": "8. Передача данных третьим лицам",
+    "ffd.privacy.p8": "Разработчик не продаёт и не передаёт ваши данные. Наружу данные уходят только в трёх случаях, каждый из которых включаете вы сами: облачное хранилище, помощник на языковой модели и Apple Health. Во всех трёх получатель — сервис, которым пользуетесь вы, а не разработчик.",
+
+    "ffd.privacy.h9": "9. Разрешения",
+    "ffd.privacy.p9": "Камера — только для сканирования штрихкода на упаковке, снимки не сохраняются и никуда не отправляются. Уведомления — напоминания о приёмах пищи. Запуск после перезагрузки — чтобы уже назначенные напоминания не пропали. Доступ к Apple Health — только при включённой синхронизации. Каждое разрешение спрашивается в момент, когда функция действительно нужна, и приложение работает без любого из них.",
+
+    "ffd.privacy.h10": "10. Данные детей",
+    "ffd.privacy.p10": "Приложение семейное: профили детей заводит взрослый, и он же отвечает за внесённые данные. Профиль ребёнка ничем не отличается от других — те же локальное хранение и то же облако. Отдельных учётных записей у детей нет, и приложение не собирает их данные самостоятельно.",
+
+    "ffd.privacy.h11": "11. Контакты",
+    "ffd.privacy.p11": "Если у вас есть вопросы о политике конфиденциальности, свяжитесь с разработчиком:",
 
     "ffd.support.page.title": "Поддержка — Family Food Diary",
     "ffd.support.nav.title": "Поддержка",
@@ -376,25 +391,40 @@ const translations = {
     "ffd.privacy.back": "← Back",
     "ffd.privacy.label": "Family Food Diary",
     "ffd.privacy.title": "Privacy Policy",
-    "ffd.privacy.updated": "Last updated: June 25, 2026",
+    "ffd.privacy.updated": "Last updated: August 28, 2026",
 
     "ffd.privacy.h1": "1. General",
     "ffd.privacy.p1": "Family Food Diary respects your privacy. The app is designed for nutrition tracking and does not collect personal information for sharing with third parties.",
 
     "ffd.privacy.h2": "2. Information Stored",
-    "ffd.privacy.p2": "The app may store meal records, food items, meal photos, nutrition statistics and other information that you choose to enter.",
+    "ffd.privacy.p2": "Everything you enter yourself: meals, foods and dishes with their nutrients, nutrition statistics, and family member profiles — name, date of birth and personal nutrient targets.",
 
-    "ffd.privacy.h3": "3. Data Storage",
-    "ffd.privacy.p3": "Your data is stored locally on your device and/or in cloud storage selected by you (Google Drive or Yandex Disk). The developer does not have access to your data.",
+    "ffd.privacy.h3": "3. Health Data",
+    "ffd.privacy.p3": "The app keeps a history of weight and height measurements for each profile, and the date of birth used to pick age-appropriate nutrition targets. This data is kept alongside the rest and is never sent anywhere except the cloud storage you choose.",
 
-    "ffd.privacy.h4": "4. Third-Party Sharing",
-    "ffd.privacy.p4": "The app does not sell, share or provide your data to third parties. All information remains under your control.",
+    "ffd.privacy.h4": "4. Data Storage",
+    "ffd.privacy.p4": "Locally on your device and, if you enable it, in the cloud storage you select — Google Drive or Yandex Disk. The files live in your own account; the developer has no access to them and keeps no copies.",
 
-    "ffd.privacy.h5": "5. Permissions",
-    "ffd.privacy.p5": "The app may request access to photos for attaching meal images and access to cloud storage services for synchronization. These permissions are used only to provide app functionality.",
+    "ffd.privacy.h5": "5. Apple Health",
+    "ffd.privacy.p5": "On iPhone you may optionally sync weight and height with the Health app — it is off by default. Reading and writing happen only when you act, read and write access are granted separately, and both can be revoked in iOS settings. Health data stays on your device and in your cloud: it is not sent to the developer and never enters analytics.",
 
-    "ffd.privacy.h6": "6. Contact",
-    "ffd.privacy.p6": "If you have any questions regarding this Privacy Policy, please contact:",
+    "ffd.privacy.h6": "6. AI Assistant",
+    "ffd.privacy.p6": "You can ask a language model to review your diet. The feature is off unless you connect a service and supply your own API key. When you make a request, a summary for the period is sent to the service you chose (for example OpenAI, DeepSeek or another from the list): profile name, weight, daily nutrient totals and the list of foods. Processing on that side is governed by that service\u2019s own policy. Your API key is kept in the device secure storage and is never sent to the developer. Do not use this feature if you would rather not share nutrition data with a third party.",
+
+    "ffd.privacy.h7": "7. Analytics and Crash Reports",
+    "ffd.privacy.p7": "The app uses Firebase Analytics and Firebase Crashlytics (Google) — anonymous usage statistics and crash reports: device model, OS and app version, and technical crash details. Your diary, measurements and profile contents are not included in these reports.",
+
+    "ffd.privacy.h8": "8. Third-Party Sharing",
+    "ffd.privacy.p8": "The developer does not sell or share your data. It leaves the device in three cases only, each of which you enable yourself: cloud storage, the AI assistant and Apple Health. In all three the recipient is a service you use, not the developer.",
+
+    "ffd.privacy.h9": "9. Permissions",
+    "ffd.privacy.p9": "Camera — only to scan a barcode on packaging; no images are stored or transmitted. Notifications — meal reminders. Start after reboot — so reminders already scheduled are not lost. Apple Health access — only when sync is enabled. Each permission is requested at the moment the feature needs it, and the app works without any of them.",
+
+    "ffd.privacy.h10": "10. Children\u2019s Data",
+    "ffd.privacy.p10": "This is a family app: children\u2019s profiles are created by an adult, who is responsible for the data entered. A child profile is no different from any other — same local storage, same cloud. Children have no separate accounts, and the app does not collect their data on its own.",
+
+    "ffd.privacy.h11": "11. Contact",
+    "ffd.privacy.p11": "If you have any questions regarding this Privacy Policy, please contact:",
 
     "ffd.support.page.title": "Support — Family Food Diary",
     "ffd.support.nav.title": "Support",
