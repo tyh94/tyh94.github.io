@@ -22,6 +22,7 @@ const translations = {
     "apps.label":       "Продукты",
     "apps.title":       "Мои приложения",
     "page.soon":        "Скоро в App Store",
+    "page.soon.rustore": "Скоро в RuStore",
     "soon":             "Скоро",
 
     "sc.name":          "Закваска-кулинар",
@@ -264,6 +265,7 @@ const translations = {
     "apps.label":       "Products",
     "apps.title":       "My apps",
     "page.soon":        "Coming Soon to App Store",
+    "page.soon.rustore": "Coming Soon to RuStore",
     "soon":             "Coming Soon",
 
     "sc.name":          "Sourdough Cooker",
