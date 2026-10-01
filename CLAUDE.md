@@ -17,12 +17,14 @@ Deployment is automatic: GitHub Pages builds `main` on push. There are no tests 
 
 ## Architecture
 
-### Everything is driven by client-side i18n
-There is no server-side templating of text. Every page is bilingual (RU default, EN) and **all user-visible text lives in `assets/js/main.js`** in the `translations` object (`{ ru: {...}, en: {...} }`). HTML elements carry a `data-i18n="key"` attribute and are left empty; `applyTranslations()` fills them via `innerHTML` on `DOMContentLoaded`. Language is persisted in `localStorage` under `lang` and toggled by the `setLang()` RU/EN buttons in every nav.
+### Text lives in `_data/translations.json`
+Every page is bilingual (RU, EN) and **all user-visible text lives in `_data/translations.json`** (`{ "ru": {...}, "en": {...} }`). `assets/js/main.js` has empty front matter, so Jekyll processes it and inlines that file as the `translations` object (`{{ site.data.translations | jsonify }}`). HTML elements carry a `data-i18n="key"` attribute; `applyTranslations()` fills them via `innerHTML` on `DOMContentLoaded`. Language is persisted in `localStorage` under `lang` (default: browser language, `ru` → RU, anything else → EN) and toggled by the `setLang()` RU/EN buttons in every nav.
+
+Family Food Diary pages (`apps/family-food-diary/*`) additionally render the **English text server-side**: `{%- assign t = site.data.translations.en -%}` at the top, and every `data-i18n` element contains `{{ t["key"] }}`. Google OAuth verification reads the raw HTML without running JS and rejected the app when these pages were empty — keep it that way for any page Google (or another store) reviews.
 
 Consequences when editing content:
-- To add or change any visible text, edit `assets/js/main.js`, **not** the HTML. Keep the `ru` and `en` maps in sync — every key must exist in both.
-- Because values are injected with `innerHTML`, they may contain markup (e.g. `<br>`, `<span>`, `<a href>`); several keys rely on this.
+- To add or change any visible text, edit `_data/translations.json`, **not** the HTML or `main.js`. Keep the `ru` and `en` maps in sync — every key must exist in both.
+- Because values are injected with `innerHTML` (and output raw by Liquid), they may contain markup (e.g. `<br>`, `<span>`, `<a href>`); several keys rely on this.
 - New pages must include an element with `id="btn-ru"` and `id="btn-en"` (the toggle) or the active-state logic is a no-op.
 - Elements with `data-i18n` but no matching key stay empty on screen — a missing/mistyped key fails silently.
 
@@ -43,6 +45,6 @@ Keys are dot-namespaced by app and page: `nav.*`, `hero.*`, `about.*` (home page
 
 ### Adding a new app
 1. Create `apps/<app-slug>/` with `index.html`, `support.html`, `privacy.html`, `terms.html` (copy an existing app's folder as the template).
-2. Add all its `data-i18n` keys under a new namespace to **both** `ru` and `en` in `assets/js/main.js`.
+2. Add all its `data-i18n` keys under a new namespace to **both** `ru` and `en` in `_data/translations.json`.
 3. Add a card to the apps grid in the root `index.html`.
 4. Google site-verification and App Store links are hard-coded per file — update them.
