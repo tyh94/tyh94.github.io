@@ -41,7 +41,7 @@ Keys are dot-namespaced by app and page: `nav.*`, `hero.*`, `about.*` (home page
 - Every HTML file starts with an empty Jekyll front-matter block (`---\n---`) so Jekyll processes it.
 
 ### Shared assets
-`assets/css/main.css` and `assets/js/main.js` are shared across all pages — a change affects the entire site. App icons live in `assets/` (e.g. `assets/sourdoughcooker-icon.jpeg`).
+`assets/css/main.css` and `assets/js/main.js` are shared across all pages — a change affects the entire site. App icons live in `assets/` (e.g. `assets/sourdoughcooker-icon.png`).
 
 ### Adding a new app
 1. Create `apps/<app-slug>/` with `index.html`, `support.html`, `privacy.html`, `terms.html` (copy an existing app's folder as the template).
