@@ -26,6 +26,12 @@ function applyTranslations(lang) {
 
 
 function setLang(lang) {
+  // Страница с языком в адресе (/ru/…, /en/…) — переходим на соседний адрес
+  const urlLang = document.documentElement.dataset.lang;
+  if (urlLang && urlLang !== lang) {
+    location.pathname = location.pathname.replace(`/${urlLang}/`, `/${lang}/`);
+    return;
+  }
   currentLang = lang;
   applyTranslations(lang);
   localStorage.setItem("lang", lang);
@@ -35,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Без сохранённого выбора — язык браузера: англоязычный посетитель (и проверяющий
   // робот Google) должен видеть ту же английскую версию, что и в HTML.
   const browserLang = (navigator.language || "").toLowerCase().startsWith("ru") ? "ru" : "en";
+  const urlLang = document.documentElement.dataset.lang;
+  if (urlLang) {
+    currentLang = urlLang;
+    applyTranslations(urlLang);
+    return;
+  }
   const saved = localStorage.getItem("lang") || browserLang;
   setLang(saved);
 });
