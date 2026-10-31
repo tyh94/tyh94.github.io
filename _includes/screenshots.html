@@ -1,0 +1,12 @@
+{%- comment -%} Скриншоты из fastlane: /assets/screenshots/<app>/<ru|en>/1..5.webp. Параметры: app, name_key. {%- endcomment -%}
+    <section class="app-section">
+      <h2 data-i18n="page.screens.h">{{ t["page.screens.h"] }}</h2>
+      <div class="screens">
+        {%- for n in (1..5) %}
+        <img src="/assets/screenshots/{{ include.app }}/{{ lang }}/{{ n }}.webp"
+             data-lang-src="/assets/screenshots/{{ include.app }}/{lang}/{{ n }}.webp"
+             alt="{{ t[include.name_key] | escape }} — {{ n }}"
+             width="600" height="1299" loading="lazy">
+        {%- endfor %}
+      </div>
+    </section>

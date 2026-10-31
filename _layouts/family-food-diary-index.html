@@ -4,11 +4,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}"{% if page.lang %} data-lang="{{ page.lang }}"{% endif %}>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="ffd.page.title">{{ t["ffd.page.title"] }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <script src="/assets/js/main.js"></script>
+{%- include head.html title_key="ffd.page.title" desc_key="ffd.desc" image="/assets/family-food-diary-icon.png" %}
 </head>
 <body>
   <nav>
@@ -41,15 +37,9 @@
            class="badge-store"
            data-i18n="page.rustore">{{ t["page.rustore"] }}</a>
       </div>
-      <!-- <a href="APP_STORE_LINK"
-         target="_blank"
-         rel="noopener">
-        <img id="appstore-badge"
-             src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
-             alt="Download on the App Store"
-             style="height: 44px;">
-      </a> -->
     </section>
+
+{% include screenshots.html app="ffd" name_key="ffd.name" %}
 
     <section class="app-section">
       <h2 data-i18n="ffd.page.about.h">{{ t["ffd.page.about.h"] }}</h2>

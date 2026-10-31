@@ -20,6 +20,8 @@ Deployment is automatic: GitHub Pages builds `main` on push. There are no tests 
 ### Text lives in `_data/translations.json`
 Every page is bilingual (RU, EN) and **all user-visible text lives in `_data/translations.json`** (`{ "ru": {...}, "en": {...} }`). `assets/js/main.js` has empty front matter, so Jekyll processes it and inlines that file as the `translations` object (`{{ site.data.translations | jsonify }}`). HTML elements carry a `data-i18n="key"` attribute; `applyTranslations()` fills them via `innerHTML` on `DOMContentLoaded`. Language is persisted in `localStorage` under `lang` (default: browser language, `ru` → RU, anything else → EN) and toggled by the `setLang()` RU/EN buttons in every nav.
 
+The home page (`index.html`) renders the **Russian** text server-side (`{%- assign t = site.data.translations.ru -%}`), so link previews and search engines see it.
+
 Family Food Diary pages (`apps/family-food-diary/*`) additionally render the **English text server-side**: `{%- assign t = site.data.translations.en -%}` at the top, and every `data-i18n` element contains `{{ t["key"] }}`. Google OAuth verification reads the raw HTML without running JS and rejected the app when these pages were empty — keep it that way for any page Google (or another store) reviews.
 
 Consequences when editing content:
@@ -39,6 +41,12 @@ Keys are dot-namespaced by app and page: `nav.*`, `hero.*`, `about.*` (home page
 - `apps/<app>/index.html` + `support.html` / `privacy.html` / `terms.html` — one folder per app. These use **absolute** asset paths (`/assets/...`).
 - `_config.yml` sets `permalink: pretty`, so `apps/foo/support.html` is served at `/apps/foo/support/`. In-page links between app subpages use trailing-slash pretty URLs (e.g. `href="support/"`, `href="privacy/"`).
 - Every HTML file starts with an empty Jekyll front-matter block (`---\n---`) so Jekyll processes it.
+
+### Shared `<head>`
+Every page builds its `<head>` with `{% include head.html title_key="…" desc_key="…" image="…" %}` (`_includes/head.html`): title, meta description, Open Graph preview, favicon (`favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` in the root) and, for `/apps/*` pages, `hreflang` links between the `/…`, `/ru/…` and `/en/…` variants. It expects `lang` and `t` to be assigned by the page.
+
+### Screenshots
+`_includes/screenshots.html` renders `assets/screenshots/<app>/<ru|en>/1..5.webp` (framed iPhone shots from each app's `fastlane/screenshots`, converted with `cwebp -q 80 -resize 600 0`). Images with `data-lang-src="…/{lang}/…"` are swapped by `applyTranslations()` when the language changes.
 
 ### Shared assets
 `assets/css/main.css` and `assets/js/main.js` are shared across all pages — a change affects the entire site. App icons live in `assets/` (e.g. `assets/sourdoughcooker-icon.png`).

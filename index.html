@@ -1,14 +1,12 @@
 ---
 ---
+{%- comment -%} Русский текст прямо в HTML: его видят роботы и превью ссылок, main.js переключает язык для людей. {%- endcomment -%}
+{%- assign lang = "ru" -%}
+{%- assign t = site.data.translations[lang] -%}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="google-site-verification" content="7pGHe2_gYBJ2YrnA7edIw_4EUE-kNeD1-0PUhIM8pjg"/>
-  <title data-i18n="nav.title"></title>
-  <link rel="stylesheet" href="assets/css/main.css">
-  <script src="assets/js/main.js"></script>
+{%- include head.html title_key="nav.title" desc_key="hero.desc" %}
 </head>
 <body>
 
@@ -17,9 +15,9 @@
     <span class="nav-logo">T<span>.</span>mkv</span>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav.about"></a></li>
-        <li><a href="#apps" data-i18n="nav.apps"></a></li>
-        <li><a href="#contact" data-i18n="nav.contact"></a></li>
+        <li><a href="#about" data-i18n="nav.about">{{ t["nav.about"] }}</a></li>
+        <li><a href="#apps" data-i18n="nav.apps">{{ t["nav.apps"] }}</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">{{ t["nav.contact"] }}</a></li>
       </ul>
       <div class="lang-toggle">
         <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
@@ -32,16 +30,16 @@
   <div id="hero">
     <div class="hero-grid">
       <div class="hero-left">
-        <p class="hero-eyebrow" data-i18n="hero.eyebrow"></p>
-        <h1 class="hero-name" data-i18n="hero.name"></h1>
-        <p class="hero-role" data-i18n="hero.role"></p>
-        <p class="hero-desc" data-i18n="hero.desc"></p>
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow">{{ t["hero.eyebrow"] }}</p>
+        <h1 class="hero-name" data-i18n="hero.name">{{ t["hero.name"] }}</h1>
+        <p class="hero-role" data-i18n="hero.role">{{ t["hero.role"] }}</p>
+        <p class="hero-desc" data-i18n="hero.desc">{{ t["hero.desc"] }}</p>
         <div class="hero-actions">
           <a href="#apps" class="btn-primary">
-            <span data-i18n="hero.btn.apps"></span>
+            <span data-i18n="hero.btn.apps">{{ t["hero.btn.apps"] }}</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#contact" class="btn-ghost" data-i18n="hero.btn.contact"></a>
+          <a href="#contact" class="btn-ghost" data-i18n="hero.btn.contact">{{ t["hero.btn.contact"] }}</a>
         </div>
       </div>
     </div>
@@ -53,13 +51,13 @@
   <section id="about">
     <div class="container">
       <div class="reveal">
-        <p class="section-label" data-i18n="about.label"></p>
-        <h2 class="section-title" data-i18n="about.title"></h2>
+        <p class="section-label" data-i18n="about.label">{{ t["about.label"] }}</p>
+        <h2 class="section-title" data-i18n="about.title">{{ t["about.title"] }}</h2>
       </div>
       <div class="about-body reveal">
-        <p data-i18n="about.p1"></p>
-        <p data-i18n="about.p2"></p>
-        <p data-i18n="about.p3"></p>
+        <p data-i18n="about.p1">{{ t["about.p1"] }}</p>
+        <p data-i18n="about.p2">{{ t["about.p2"] }}</p>
+        <p data-i18n="about.p3">{{ t["about.p3"] }}</p>
         <div class="skills-wrap">
           <span class="skill-chip">Swift</span>
           <span class="skill-chip">SwiftUI</span>
@@ -86,8 +84,8 @@
   <section id="apps">
     <div class="container">
       <div class="reveal" style="margin-bottom:3rem;">
-        <p class="section-label" data-i18n="apps.label"></p>
-        <h2 class="section-title" data-i18n="apps.title"></h2>
+        <p class="section-label" data-i18n="apps.label">{{ t["apps.label"] }}</p>
+        <h2 class="section-title" data-i18n="apps.title">{{ t["apps.title"] }}</h2>
       </div>
       <div class="apps-grid">
 
@@ -98,9 +96,9 @@
               <img src="assets/sourdoughcooker-icon.png" alt="Bake Step by Step" class="app-icon">
             </div>
             <div class="app-info">
-              <p class="app-cat" data-i18n="sc.cat"></p>
-              <h3 data-i18n="sc.name">Bake Step by Step</h3>
-              <p data-i18n="sc.desc"></p>
+              <p class="app-cat" data-i18n="sc.cat">{{ t["sc.cat"] }}</p>
+              <h3 data-i18n="sc.name">{{ t["sc.name"] }}</h3>
+              <p data-i18n="sc.desc">{{ t["sc.desc"] }}</p>
             </div>
             <div class="app-badge-wrap">
               <img id="appstore-badge"
@@ -121,30 +119,17 @@
             </div>
 
             <div class="app-info">
-              <p class="app-cat" data-i18n="ffd.cat"></p>
-              <h3 data-i18n="ffd.name"></h3>
-              <p data-i18n="ffd.desc"></p>
+              <p class="app-cat" data-i18n="ffd.cat">{{ t["ffd.cat"] }}</p>
+              <h3 data-i18n="ffd.name">{{ t["ffd.name"] }}</h3>
+              <p data-i18n="ffd.desc">{{ t["ffd.desc"] }}</p>
             </div>
 
             <div class="app-badge-wrap">
-              <span class="badge-store" data-i18n="page.rustore.short"></span>
+              <span class="badge-store" data-i18n="page.rustore.short">{{ t["page.rustore.short"] }}</span>
             </div>
           </div>
         </a>
 
-        <!-- APP 2: раскомментируй когда будет готово
-        <div class="app-card reveal">
-          <div class="app-icon-box blue">🔵</div>
-          <div class="app-info">
-            <p class="app-cat" data-i18n="..."></p>
-            <h3>Название</h3>
-            <p data-i18n="..."></p>
-          </div>
-          <div class="app-badge-wrap">
-            <span class="badge-soon" data-i18n="..."></span>
-          </div>
-        </div>
-        -->
 
       </div>
     </div>
@@ -155,9 +140,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container reveal">
-      <p class="section-label" data-i18n="contact.label"></p>
-      <h2 class="contact-title" data-i18n="contact.title"></h2>
-      <p class="contact-sub" data-i18n="contact.sub"></p>
+      <p class="section-label" data-i18n="contact.label">{{ t["contact.label"] }}</p>
+      <h2 class="contact-title" data-i18n="contact.title">{{ t["contact.title"] }}</h2>
+      <p class="contact-sub" data-i18n="contact.sub">{{ t["contact.sub"] }}</p>
       <div class="contact-row">
         <a href="mailto:tyh94@icloud.com" class="clink primary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
@@ -180,7 +165,7 @@
   </section>
 
   <footer>
-    <p data-i18n="footer.copy"></p>
+    <p data-i18n="footer.copy">{{ t["footer.copy"] }}</p>
   </footer>
 </body>
 </html>

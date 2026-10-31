@@ -17,6 +17,11 @@ function applyTranslations(lang) {
   document.getElementById("btn-ru")?.classList.toggle("active", lang === "ru");
   document.getElementById("btn-en")?.classList.toggle("active", lang === "en");
 
+  // Картинки на языке страницы: data-lang-src="/path/{lang}/file.webp"
+  document.querySelectorAll("[data-lang-src]").forEach(img => {
+    img.src = img.dataset.langSrc.replace("{lang}", lang);
+  });
+
   // App Store badge locale
   const badge = document.getElementById("appstore-badge");
   if (badge) {

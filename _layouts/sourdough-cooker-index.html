@@ -4,12 +4,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}"{% if page.lang %} data-lang="{{ page.lang }}"{% endif %}>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="7pGHe2_gYBJ2YrnA7edIw_4EUE-kNeD1-0PUhIM8pjg" />
-    <title data-i18n="sc.page.title">{{ t["sc.page.title"] }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <script src="/assets/js/main.js"></script>
+{%- include head.html title_key="sc.page.title" desc_key="sc.desc" image="/assets/sourdoughcooker-icon.png" %}
 </head>
 <body>
   <nav>
@@ -38,6 +33,8 @@
             style="height: 44px;">
       </a>
     </section>
+
+{% include screenshots.html app="sc" name_key="sc.name" %}
 
     <section class="app-section">
       <h2 data-i18n="sc.page.about.h">{{ t["sc.page.about.h"] }}</h2>

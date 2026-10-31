@@ -1,0 +1,39 @@
+{%- comment -%}
+Общий <head>. Ждёт из шаблона переменные lang и t (словарь переводов).
+Параметры: title_key, desc_key — ключи из translations.json; image — картинка превью ссылки (путь от корня).
+{%- endcomment -%}
+{%- assign title = t[include.title_key] | strip_html -%}
+{%- assign desc = t[include.desc_key] | strip_html -%}
+{%- assign image = include.image | default: "/assets/logo-512.png" -%}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7pGHe2_gYBJ2YrnA7edIw_4EUE-kNeD1-0PUhIM8pjg">
+  <title data-i18n="{{ include.title_key }}">{{ title }}</title>
+  <meta name="description" content="{{ desc | escape }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="T.mkv">
+  <meta property="og:title" content="{{ title | escape }}">
+  <meta property="og:description" content="{{ desc | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ image | absolute_url }}">
+  <meta property="og:locale" content="{% if lang == 'ru' %}ru_RU{% else %}en_US{% endif %}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{%- comment -%} Страницы приложений есть в трёх адресах: /apps/x/…, /apps/x/ru/…, /apps/x/en/…; связываем их для поисковиков. {%- endcomment %}
+{%- assign parts = page.url | split: "/" -%}
+{%- if parts[1] == "apps" %}
+  {%- assign app_root = "/apps/" | append: parts[2] | append: "/" -%}
+  {%- assign base = page.url | replace_first: "/ru/", "/" | replace_first: "/en/", "/" -%}
+  {%- assign ru_root = app_root | append: "ru/" -%}
+  {%- assign en_root = app_root | append: "en/" -%}
+  <link rel="alternate" hreflang="ru" href="{{ base | replace_first: app_root, ru_root | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ base | replace_first: app_root, en_root | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ base | absolute_url }}">
+{%- endif %}
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script>
